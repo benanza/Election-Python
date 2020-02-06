@@ -6,6 +6,9 @@ import os
 # (it's in the same directory as this python file)
 csvpath = os.path.join("election_data.csv")
 
+
+candidate_list = {}
+
 # open the csv using more efficient csv module language
 with open(csvpath, newline = "") as csvfile:
     data_set = csv.reader(csvfile, delimiter=",")
@@ -18,19 +21,20 @@ with open(csvpath, newline = "") as csvfile:
     total_votes_count = -1
 
     # initialize counters for each candidate
-    Khan_Count = 0
-    Correy_Count = 0
-    Li_Count = 0
-    Otooley_Count = 0
+    Khan_Count = Correy_Count = Li_Count = Otooley_Count = 0
     
     # initialize percentages for each candidate's vote count
-    Khan_Percent = 0
-    Correy_Percent = 0
-    Li_Percent = 0
-    Otooley_Percent = 0
+    Khan_Percent = Correy_Percent = Li_Percent = Otooley_Percent = 0
 
     # loop through each row of the data set
     for row in data_set:
+        
+        if row[2] not in candidate_list:
+            #key = value
+            candidate_list[row[2]] = 1
+        else:
+            candidate_list[row[2]] += 1
+            
 
         # have a running counter that will yield the total number of rows
         # to use for calculating percentage of votes
@@ -38,17 +42,18 @@ with open(csvpath, newline = "") as csvfile:
 
         # set up conditionals to identify contents of each 3rd column
         # and add to a counter that adds up all the votes for each candidate
-        if row[2] == "Khan":
-            Khan_Count += 1
-        elif row[2] == "Correy":
-            Correy_Count += 1
-        elif row[2] == "Li":
-            Li_Count += 1
-        elif row[2] == "O'Tooley":
-            Otooley_Count += 1
+        # if row[2] == "Khan":
+        #     Khan_Count += 1
+        # elif row[2] == "Correy":
+        #     Correy_Count += 1
+        # elif row[2] == "Li":
+        #     Li_Count += 1
+        # elif row[2] == "O'Tooley":
+        #     Otooley_Count += 1
     
+    #loop through dictionary to get candidate name as key and votes as value -->
     # create a dictionary with that assigns each key (candidate)
-    # with the amount of votes they collec
+    # with the amount of votes they collect
     Results = {"Khan":Khan_Count, "Correy":Correy_Count, "Li":Li_Count, "O'Tooley":Otooley_Count}
     
     # Calculate percentages and round to 3 decimal places
