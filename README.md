@@ -8,4 +8,5 @@ The poll data is inside the given csv file (election_data.csv), composed of thre
 
 The total number of votes cast, a complete list of candidates who received votes, the percentage of votes each candidate won, the total number of votes each candidate won, and the winner of the election based on popular vote.
 
-The script also prints the analysis to the terminal and exports a text file with the results.
+The script also prints the analysis to the terminal and exports a text file with the results appearing as follows:
+
