@@ -1,6 +1,6 @@
 # Election Results with Python
 
-## Python script for counting poll results and returning winners/losers/vote counts from CSV
+### Python script for counting poll results and returning winners/losers/vote counts from CSV
 
 The situation: a small, rural town is modernizing its vote-counting process.
 
