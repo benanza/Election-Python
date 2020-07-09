@@ -10,3 +10,5 @@ The total number of votes cast, a complete list of candidates who received votes
 
 The script also prints the analysis to the terminal and exports a text file with the results appearing as follows:
 
+![Image of Yaktocat](https://github.com/benanza/Election-Python/blob/master/Polling%20Results.png?raw=true)
+
